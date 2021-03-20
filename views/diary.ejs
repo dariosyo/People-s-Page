@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+
+
+<h2>Diary</h2>
+
+<a href="/diaryCompose" class="tools">Compose</a>
+
+<p><%= startingContent %></p>
+
+<%  posts.forEach(function(post){ %>
+
+  <h2 class="tools"><%=post.date%></h2>
+  <form  action="/diaryDelete" method="post">
+
+    <div class="item">
+      <button type="submit" name="checkbox" value="<%=post._id%>" onchange="this.form.submit()" class="chkBtn">Delete</button>
+
+    </div>
+  </form>
+
+
+  <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+
+
+  <% }) %>
+
+<%- include("partials/footer"); -%>

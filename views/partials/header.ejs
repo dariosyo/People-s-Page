@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>People's Page</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+
+
+  <!-- The navigation menu -->
+
+  <nav class="navbar">
+    <a  href="#"><img class="logo" src="/images/logo4.png" alt="logo" /></a>
+
+    <ul class="main">
+      <li id="home"><a href="/">Home</a></li>
+      <li>
+        <a >Blogs</a>
+          <ul class="sub">
+            <li id="educational"><a href="/educational">Educational</a></li>
+            <li id="political"><a href="/political">Political</a></li>
+            <li id="health"><a href="/health">Health</a></li>
+
+          </ul>
+      </li>
+      <li id="diary"><a href="/diary">Diary</a></li>
+      <li id="fun"><a href="/fun">Fun</a></li>
+      <li id="about"><a href="/about">About</a></li>
+      <li id="login"><a href="#">Login/Register</a></li>
+
+    </ul>
+  </nav>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('.main li').hover(
+        function(){
+          $('ul.sub', this).slideDown(300);
+        },
+        function(){
+          $('ul.sub', this).slideUp(300);
+        }
+      );
+    });
+
+  </script>
+  <body>
+    <div class="container">

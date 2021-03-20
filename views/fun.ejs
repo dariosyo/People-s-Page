@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+
+
+<h2>Fun</h2>
+
+<a href="/funCompose" class="tools">Compose</a>
+
+<p><%= startingContent %></p>
+
+<%  posts.forEach(function(post){ %>
+
+  <h2 class="tools"><%=post.date%></h2>
+  <form  action="/funDelete" method="post">
+
+    <div class="item">
+      <button type="submit" name="checkbox" value="<%=post._id%>" onchange="this.form.submit()" class="chkBtn">Delete</button>
+
+    </div>
+  </form>
+
+
+  <p>
+    <%=post.content + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+
+
+  <% }) %>
+
+<%- include("partials/footer"); -%>

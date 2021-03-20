@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+
+
+<h2>Educational</h2>
+<a href="/eduCompose" class = "toolsOther">Compose</a>
+<p><%= startingContent %></p>
+
+<%  newListItems.forEach(function(post){ %>
+
+  <h2><%-post.title%></h2>
+  <p class="toolsOther"><%-post.date%></p>
+  <form  action="/eduDelete" method="post">
+
+    <div class="item">
+      <button type="submit" name="checkbox" value="<%=post._id%>" onchange="this.form.submit()" class="chkBtnDelete">Delete</button>
+    </div>
+    <!-- <inpute type="hidden" name="listName" value="educational"></inpute> -->
+  </form>
+
+
+  <p>
+    <%-post.content + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+
+
+  <% }) %>
+<%- include("partials/footer"); -%>

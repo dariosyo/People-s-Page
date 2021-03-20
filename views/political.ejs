@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+
+
+<h2>Political</h2>
+<a href="/polCompose" class="toolsOther">Compose</a>
+
+<p><%= startingContent %></p>
+
+<%  newListItems.forEach(function(post){ %>
+
+  <h2><%=post.title%></h2>
+  <p class="toolsOther"><%=post.date%></p>
+  <form  action="/polDelete" method="post">
+
+    <div class="item">
+      <button type="submit" name="checkbox" value="<%=post._id%>" onchange="this.form.submit()" class="chkBtnDelete">Delete</button>
+
+    </div>
+  </form>
+
+
+  <p>
+    <%=post.content + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+
+
+  <% }) %>
+
+<%- include("partials/footer"); -%>

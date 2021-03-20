@@ -1,0 +1,210 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+h1 {
+  color:#dae1e7;
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 100px;
+  font-size: 60px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+
+.container {
+  position: absolute;
+  /* background-color: #b2a9a2; */
+  width: 100%;
+  height:100%;
+  padding: 90px 0 0;
+}
+.container img {
+  width:100%;
+  height: 100%;
+}
+.container p{
+
+  padding:10px 100px;
+
+}
+.container h2 {
+  padding: 0 100px;
+  display: inline-block;
+  /* color: #dae1e7; */
+  color: black;
+
+  font-style: italic;
+
+}
+
+.navbar {
+  background-image: linear-gradient(to bottom right, #45423e, #181816);
+  margin: 0;
+  width: 100%;
+  height: 90px;
+  border-radius: 0;
+  border: 0;
+  position: fixed;
+  z-index: 1;
+}
+nav .main{
+  margin: 20px 60px;
+
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+nav li {
+  float: left;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  position: relative;
+  margin: 0 50px;
+
+}
+nav li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #dae1e7;
+  text-decoration: none;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+
+}
+nav li a:hover{
+  color: #fff;
+
+}
+nav ul.sub {
+  position: absolute;
+  display:none;
+  background-color: gray;
+
+}
+.sub a{
+  color: #fff;
+  font-weight: bolder;
+}
+.sub a:hover{
+  color:black;
+}
+.logo{
+  width: 120px;
+  margin-left: 20px;
+  float:left;
+}
+
+.tools{
+  /* color: #dae1e7; */
+  color: black;
+  display: inline;
+  line-height: 40px;
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+  padding: 0 20px;
+  text-decoration: underline;
+
+}
+.tools:hover{
+  /* color: #fff; */
+  color: gray;
+}
+
+.toolsOther {
+  color: black;
+  display: inline;
+  line-height: 40px;
+  text-align: center;
+  font-family:sans-serif;
+  font-size: 20px;
+  padding: 0 20px;
+  text-decoration: underline;
+}
+
+/* tools button */
+
+form {
+  display: inline-block;
+}
+
+form .chkBtn {
+/* color: #dae1e7; */
+color: red;
+
+  background-color: Transparent;
+   background-repeat:no-repeat;
+   border: none;
+   cursor:pointer;
+   overflow: hidden;
+   outline:none;
+  display: inline;
+  line-height: 40px;
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+  text-decoration: underline;
+  padding: 0 20px;
+}
+
+.chkBtnDelete {
+  color: red;
+
+    background-color: Transparent;
+     background-repeat:no-repeat;
+     border: none;
+     cursor:pointer;
+     overflow: hidden;
+     outline:none;
+    display: inline;
+    line-height: 40px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-decoration: underline;
+    padding: 0 20px;
+}
+
+form .chkBtn:hover{
+  /* color: #fff; */
+  color: gray;
+
+}
+.form-main{
+  width:80%;
+  margin: 0 10%;
+}
+
+/* footer section */
+.footer {
+	/* position: absolute; */
+	/* text-align: center; */
+	/* bottom: 0; */
+	/* width:100%; */
+	/* height: 60px; */
+  background-image: linear-gradient(to bottom right, #171715, #201f1d);
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: red; */
+  color: white;
+  text-align: center;
+}
+
+.footer p {
+	margin-top: 25px;
+	font-size: 12px;
+  color: #dbdbdb;
+  padding: 0;
+
+}
