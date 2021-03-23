@@ -14,10 +14,15 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
+
 app.use(express.static(__dirname + "/public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+
 
 mongoose.connect("mongodb://localhost:27017/ppDB", {
   useNewUrlParser: true,
@@ -37,7 +42,7 @@ const diarySchema = {
 
 const blogSchema = {
   title: String,
-  date: Number,
+  date: Date,
   content: String
 };
 
@@ -74,7 +79,7 @@ app.get("/diary", function(req, res) {
     month: "long",
     year: 'numeric'
   }
-  let day = today.toUTCString();
+  let day = today.toLocaleString();
   Diary.find({}, function(err, posts) {
     res.render("diary", {
       startingContent: homeStartingContent,
@@ -227,7 +232,7 @@ app.get("/diaryCompose", function(req, res) {
   //   year: 'numeric'
   // }
   dayFunction(today);
-  let day = today.toUTCString();
+  let day = today.toLocaleString('en-US');
   res.render("diaryCompose", {
     currentDay: day
   });
@@ -238,7 +243,7 @@ const today = new Date();
 function dayFunction() {
   // const today = new Date();
   let options = {
-    weekday: "short",
+    weekday: "long",
     day: "numeric",
     month: "long",
     year: 'numeric'
@@ -250,11 +255,11 @@ function dayFunction() {
 
 app.post("/funCompose", function(req, res) {
 
-  const diary = new Fun({
+  const fun = new Fun({
     date: req.body.postDate,
     content: req.body.postBody
   });
-  diary.save(function(err) {
+  fun.save(function(err) {
     if (!err) {
       res.redirect("fun");
     }
