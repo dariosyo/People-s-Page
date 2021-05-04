@@ -26,7 +26,13 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-mongoose.connect("mongodb://localhost:27017/ppDB", {
+// mongoose.connect("mongodb://localhost:27017/ppDB", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useFindAndModify: false
+// });
+
+mongoose.connect("mongodb+srv://dariosAdmin:DariDB@cluster0.oqnzv.mongodb.net/ppDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
@@ -75,7 +81,7 @@ app.get("/about", function(req, res) {
 
 app.get("/login", function(req, res){
   res.render("login", {
-    aboutContent:featureNotAvailable 
+    aboutContent:featureNotAvailable
   });
 });
 
@@ -465,7 +471,14 @@ app.post("/healthDelete", function(req, res) {
   });
 });
 
+// heroku deploy setup
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
-app.listen(8000, function() {
-  console.log("Server started on port 8000");
+
+app.listen(port, function() {
+  console.log("Server has started.");
 });
